@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <style>
+
+    html, body {
+        overflow: hidden;
+        height: 100%;
+    }
+
+    #foto-perfil {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    #foto-perfil img {
+        width: 150px; /* Tamanho padrão da foto */
+        height: 150px;
+        border-radius: 50%; /* Deixa a imagem redonda */
+        border: 3px solid #ddd; /* Borda para destacar a imagem */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+        object-fit: cover; /* Ajusta a foto dentro do círculo */
+    }
+        /* Reset básico */
+        body, h1, h2, p, button {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f0f0f0; /* Cor gelo */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            position: relative;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: #fff;
+            border: 2px solid #ddd;
+            color: #333;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background-color: #f8f8f8;
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .button:active {
+            transform: translateY(2px);
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .dark-mode {
+            background-color: #222;
+            color: #ddd;
+        }
+
+        .dark-mode .button {
+            background-color: #333;
+            color: #fff;
+            border-color: #444;
+        }
+
+        .dark-mode .button:hover {
+            background-color: #444;
+        }
+
+        /* Botão de alternar modo escuro */
+        .toggle-dark-mode {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            transition: transform 0.2s ease;
+        }
+
+        .toggle-dark-mode:hover {
+            transform: scale(1.1);
+        }
+
+        .toggle-dark-mode svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        main {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .content {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .content img, .content video {
+            max-width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-dark-mode" id="toggle-dark-mode">
+        <svg id="dark-mode-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 3.1c.66 0 1.3.08 1.92.23a9.94 9.94 0 0 0-7.35 11.4c.18 1.17.63 2.26 1.27 3.23A9.91 9.91 0 0 1 12 3.1zM12 21c-4.97 0-9-4.03-9-9s4.03-9 9-9c.34 0 .68.02 1.02.05A7.5 7.5 0 1 1 12 21z" />
+        </svg>
+    </button>
+
+    <header>
+        <div id="foto-perfil">
+            <img src="./img/Foto.png" alt="Foto" id="Foto" />
+        </div>
+        <h1>Yan Guerreiro</h1>
+        <p>Desenvolvedor FullStack</p>
+    </header>
+
+    <main>
+
+        <!-- RESUMO
+        <section id="resumo-profissional">
+            <h2>Resumo Profissional</h2>
+            <p>Desenvolvedor com experiência em criação de soluções criativas e funcionais. Apaixonado por tecnologia e design.</p>
+        </section>
+        -->
+        <div class="button-container">
+            <button class="button" data-target="habilidades">Habilidades</button>
+            <button class="button" data-target="projetos">Projetos</button>
+            <button class="button" data-target="experiencia">Experiência</button>
+            <button class="button" data-target="educacao">Educação</button>
+            <button class="button" data-target="contato">Contato</button>
+        </div>
+
+        <section id="habilidades" class="content">
+           <!-- <h2>Habilidades</h2>
+            <p>Confira algumas das minhas habilidades:</p> -->
+            <img src="habilidade1.jpg" alt="Habilidade 1">
+            <img src="habilidade2.jpg" alt="Habilidade 2">
+        </section>
+
+        <section id="projetos" class="content">
+             <h2>E-Commerce</h2>
+            <!--<p>Aqui estão alguns dos meus projetos:</p> 
+            <img src="projeto1.jpg" alt="Projeto 1">
+            <img src="projeto2.jpg" alt="Projeto 2">-->
+            <video src="projeto_demo.mp4" controls></video>
+            <br>
+            <a href="https://github.com/" target="_blank">
+                <img src="./img/GitHub.png" alt="Imagem do GitHub" width="100">
+            <a href="https://github.com/" target="_blank">
+                <img src="./img/GitHub.png" alt="Imagem do GitHub" width="100">
+            </a>
+        </section>
+
+        <section id="experiencia" class="content">
+            <!-- <h2>Experiência</h2>
+            <p>Confira minha trajetória profissional:</p> -->
+            <img src="empresa1.jpg" alt="Empresa 1">
+            <img src="empresa2.jpg" alt="Empresa 2">
+        </section>
+
+        <section id="educacao" class="content">
+            <!-- <h2>Educação</h2>
+            <p>Meu histórico acadêmico:</p> -->
+            <img src="certificado1.jpg" alt="Certificado 1">
+            <img src="certificado2.jpg" alt="Certificado 2">
+        </section>
+
+        <section id="contato" class="content">
+            <!-- <h2>Contato</h2>-->
+            <p>Entre em contato comigo clicando abaixo</p>
+            <img src="contato.jpg" alt="Informações de Contato">
+        </section>
+    </main>
+
+    <script>
+        const toggleDarkModeButton = document.getElementById('toggle-dark-mode');
+        const darkModeIcon = document.getElementById('dark-mode-icon');
+        const buttons = document.querySelectorAll('.button');
+        const contents = document.querySelectorAll('.content');
+
+        // Alternar entre ícones de sol e lua
+        const updateIcon = () => {
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeIcon.innerHTML = '<path d="M12 3.1c.66 0 1.3.08 1.92.23a9.94 9.94 0 0 0-7.35 11.4c.18 1.17.63 2.26 1.27 3.23A9.91 9.91 0 0 1 12 3.1zM12 21c-4.97 0-9-4.03-9-9s4.03-9 9-9c.34 0 .68.02 1.02.05A7.5 7.5 0 1 1 12 21z" />'; // Lua
+            } else {
+                darkModeIcon.innerHTML = '<path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8a7.004 7.004 0 0 0 0 9.9l-1.79 1.8 1.41 1.41 1.8-1.79a7.004 7.004 0 0 0 9.9 0l1.8 1.79 1.41-1.41-1.79-1.8a7.004 7.004 0 0 0 0-9.9l1.79-1.8-1.41-1.41-1.8 1.79a7.004 7.004 0 0 0-9.9 0z" />'; // Sol
+            }
+        };
+
+        // Modo escuro/claro
+        toggleDarkModeButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            updateIcon();
+        });
+
+        // Navegar entre seções
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const target = button.getAttribute('data-target');
+
+                contents.forEach(content => {
+                    if (content.id === target) {
+                        content.classList.add('active');
+                    } else {
+                        content.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
